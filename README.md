@@ -2,7 +2,7 @@
 
 Some useful Angular modules written by developers at [StayClassy].
 
----
+
 
 ## Usage
 
@@ -22,19 +22,19 @@ Add the desired module file to your page (angular.js is a dependency) and then i
 	
 
 
----
+
 
 ## Modules
-#### ** directives/Form.js ** - ([classy.directives.form](#directivesForm))
+#### directives/Form.js - ([classy.directives.form](#classydirectivesform))
 
 Every day directives for forms (origniated from our checkout page). 
 
 
----
+
 
 ## Directives
 
-### [classy.directives.form](id:directivesForm)
+### classy.directives.form
 
 
 ##### scBlurFocusDirective
