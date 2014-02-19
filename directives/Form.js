@@ -41,22 +41,22 @@ function () {
 		return {
 			restrict: 'E',
 			require: '?ngModel',
-			link: function (scope, elm, attr, ctrl) {
+			link: function (scope, element, attrs, ctrl) {
 				if (!ctrl) {
 					return;
 				}
 
-				elm.on('focus', function () {
-					elm.addClass('has-focus');
+				element.on('focus', function () {
+					element.addClass('has-focus');
 
 					scope.$apply(function () {
 						ctrl.hasFocus = true;
 					});
 				});
 
-				elm.on('blur', function () {
-					elm.removeClass('has-focus');
-					elm.addClass('has-visited');
+				element.on('blur', function () {
+					element.removeClass('has-focus');
+					element.addClass('has-visited');
 
 					scope.$apply(function () {
 						ctrl.hasFocus = false;
@@ -79,7 +79,7 @@ function () {
 		function ($log, $parse, $filter) {
 			return {
 				replace: true,
-				require: 'ngModel',
+				require: '?ngModel',
 				template: '<select ng-options="month.val as month.val for month in months"></select>',
 				link: function (scope, element, attrs) {
 
@@ -105,7 +105,7 @@ function () {
 		function ($log, $parse, $filter) {
 			return {
 				replace: true,
-				require: 'ngModel',
+				require: '?ngModel',
 				template: '<select ng-options="year.val as year.val for year in years"></select>',
 				link: function (scope, element, attrs) {
 
@@ -129,7 +129,7 @@ function () {
 		function ($log, $parse) {
 			return {
 				replace: true,
-				require: 'ngModel',
+				require: '?ngModel',
 				template: '<select ng-options="country.val as country.name for country in countries">' +
 				'<option value="">Please Select</option></select>',
 				link: function (scope, element, attrs) {
@@ -183,7 +183,7 @@ function () {
 		 * */
 		function ($log) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 
 					attrs.$set('pattern', '[0-9]*');
@@ -242,7 +242,7 @@ function () {
 		 * */
 		function ($log) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 
 					attrs.$set('pattern', '[0-9]*');
@@ -328,7 +328,7 @@ function () {
 		 * */
 		function ($log) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 
 					ctrl.$parsers.unshift(function (viewValue) {
@@ -361,7 +361,7 @@ function () {
 		 * */
 		function ($log) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 					ctrl.$parsers.unshift(function (viewValue) {
 
@@ -392,7 +392,7 @@ function () {
 		 * */
 		function ($log, $filter, $parse) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 
 					scope.$watch(attrs.scIsExpired,
@@ -424,7 +424,7 @@ function () {
 		 * */
 		function ($log, $filter, $parse) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 					ctrl.$parsers.unshift(function (viewValue) {
 
@@ -456,7 +456,7 @@ function () {
 		 * */
 		function ($log, $parse) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				replace: true,
 				scope: {
 					list: '=scCustomSelect',
@@ -474,7 +474,7 @@ function () {
 		 * */
 		function ($log, $parse) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				replace: true,
 				scope: {
 					list: '=scArraySelect'
@@ -492,7 +492,7 @@ function () {
 		 * */
 		function ($log, $parse, $timeout) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 					$timeout(function (){
 						scope.$watch(attrs.ngModel, function (value) {
@@ -516,7 +516,7 @@ function () {
 		* */
 		function ($log, $parse, $timeout) {
 			return {
-				require: 'ngModel',
+				require: '?ngModel',
 				link: function (scope, element, attrs, ctrl) {
 					$timeout(function () {
 
@@ -589,7 +589,7 @@ function () {
 		function ($log, $parse, $timeout) {
 			return {
 				restrict: 'A',
-				requires: 'ngModel',
+				requires: '?ngModel',
 				link: function (scope, element, attrs) {
 
 					$timeout(function (){
