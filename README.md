@@ -2,7 +2,7 @@
 
 Some useful Angular modules written by developers at [StayClassy].
 
-
+[Click here for some examples.]
 
 ## Usage
 
@@ -77,3 +77,4 @@ Credit card expiration months dropdown. Selects current month on load.
 
 
 [StayClassy]: http://stayclassy.org
+[Click here for some examples.]: http://jsfiddle.net/sc_mlingner/e8YWT/12/
