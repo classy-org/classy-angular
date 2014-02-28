@@ -109,19 +109,21 @@ Sets field to invalid if the min value is exceeded.
 
 ##### scCustomSelect
 This directive builds a custom select dropdown using a JSON object. You can set custom values and custom text.
-
+	// In controller
 	$scope.customSelect = {
 		"Value A": "Text A",
 		"Value B": "Text B",
 		"Value C": "Text C"
 	}
 
+	// In markup
 	<span sc-custom-select="customSelect" ng-model=""></span>
 
 ##### scIsInArray
 Only values from the reference array will be considered valid. All other values are not in the array and are therefore valid.
 
-	<input type="text" ng-model="modelA" sc-is-in-array="arrayA" /> // If arrayA is ['A', 'B', 'C'], only A, B, and C will be accepted as valid.
+	<input type="text" ng-model="modelA" sc-is-in-array="arrayA" /> 
+	// If arrayA is ['A', 'B', 'C'], only A, B, and C will be accepted as valid.
 
 ##### scIsInObject
 
