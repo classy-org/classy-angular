@@ -106,11 +106,40 @@ Sets field to invalid if the min value is exceeded.
 
 ##### scIsExpired
 ##### scPhoneNumber
+
 ##### scCustomSelect
+This directive builds a custom select dropdown using a JSON object. You can set custom values and custom text.
+
+	$scope.customSelect = {
+		"Value A": "Text A",
+		"Value B": "Text B",
+		"Value C": "Text C"
+	}
+
+	<span sc-custom-select="customSelect" ng-model=""></span>
+
 ##### scIsInArray
+Only values from the reference array will be considered valid. All other values are not in the array and are therefore valid.
+
+	<input type="text" ng-model="modelA" sc-is-in-array="arrayA" /> // If arrayA is ['A', 'B', 'C'], only A, B, and C will be accepted as valid.
+
 ##### scIsInObject
+
+
 ##### scSubmit
+This function will re-check the validity of a form prior to calling its submit handler. Replaces ng-submit.
+
+	<form sc-submit="submit()">
+		<input type="email" />
+	</form>
+
 ##### scMirrorModel
+Copies the original field's model into another field. Changes to the second field will not impact the original.
+
+	<input type="text" ng-model="modelA" sc-mirror-model="modelB"> // Changes to this field will copy to the field below.
+	<input type="text" ng-model="modelB"> // Changes to this field will not affect the field above!
+
+
 
 
 [StayClassy]: http://stayclassy.org
